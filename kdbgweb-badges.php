@@ -52,3 +52,11 @@ function kdbgweb_badges_options_page() {
     require('inc/options-page-wrapper.php');
     
 }
+
+function kdbgweb_badges_styles() {
+	
+	wp_enqueue_style('kdbgweb_badges_styles', plugins_url('kdbgweb-badges/kdbgweb-badges.css') );
+	
+}
+
+add_action('admin_head','kdbgweb_badges_styles');

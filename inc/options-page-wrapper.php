@@ -101,7 +101,7 @@
 							<p>
                             	<img class="kdbgweb-gravatar" width="100%" src="<?php echo $plugin_url.'/images/kirandash.jpg' ?>" alt="Profile picture of Kiran Dash" >
                             </p>
-                            <ul>
+                            <ul class="kdbgweb-badges-and-points">
                             	<li><?php _e( 'Badges: <strong>200</strong>', 'wp_admin_style' ); ?></li>
                                 <li><?php _e( 'Points: <strong>10000</strong>', 'wp_admin_style' ); ?></li>
                             </ul>
