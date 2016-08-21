@@ -97,7 +97,7 @@
 
 				<div class="meta-box-sortables">
 					
-                    <?php if( isset( $kdbgweb_username ) || $kdbgweb_username != '' ): ?>
+                    <?php if( isset( $kdbgweb_username ) && $kdbgweb_username != '' ): ?>
                     
 					<div class="postbox">
 
@@ -116,6 +116,18 @@
                             	<li><?php _e( 'Badges: <strong>200</strong>', 'wp_admin_style' ); ?></li>
                                 <li><?php _e( 'Points: <strong>10000</strong>', 'wp_admin_style' ); ?></li>
                             </ul>
+                            <form name="kdbgweb_username_form" method="post" action="">
+                                
+                                <input type="hidden" name="kdbgweb_form_submitted" value="Y">
+                                
+                                <p>
+                                   <label for="kdbgweb_username"><?php esc_attr_e( 'Username', 'wp_admin_style' ); ?></label>
+                                </p>   
+                                <p>
+                                   <input type="text" name="kdbgweb_username" id="kdbgweb_username" value="<?php echo $kdbgweb_username; ?>" />
+                                   <input class="button-primary" type="submit" name="kdbgweb_username_submit" value="<?php esc_attr_e( 'Update' ); ?>" />
+                                </p>
+                            </form>                            
 						</div>
 						<!-- .inside -->
 

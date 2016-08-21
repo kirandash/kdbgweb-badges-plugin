@@ -9,7 +9,7 @@
 }
 
 .postbox .inside {
-	display: table
+	display: table;
 }
 
 .postbox .kdbgweb-badges > li {
