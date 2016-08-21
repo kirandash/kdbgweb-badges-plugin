@@ -10,6 +10,12 @@
  */
 
 /*
+ * Assign global variables
+ */
+ 
+ $plugin_url = WP_PLUGIN_URL . '/kdbgweb-badges';
+ 
+/*
  * Add a link to our plugin in the admin menu
  * under 'Settings > BG Web Agency Badges'
  */
@@ -41,6 +47,8 @@ function kdbgweb_badges_options_page() {
         
     }
     
-    echo '<p>Welcome to our plugin page.</p>';
+	global $plugin_url;
+	
+    require('inc/options-page-wrapper.php');
     
 }
