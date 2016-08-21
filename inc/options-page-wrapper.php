@@ -13,7 +13,9 @@
 			<div id="post-body-content">
 
 				<div class="meta-box-sortables ui-sortable">
-
+					
+                    <?php if( !(isset( $kdbgweb_username )) || $kdbgweb_username == '' ): ?>
+                    
 					<div class="postbox">
 
 						<div class="handlediv" title="Click to toggle"><br></div>
@@ -23,11 +25,14 @@
 						</h2>
 
 						<div class="inside">
-                            <form method="post" action="">
+                            <form name="kdbgweb_username_form" method="post" action="">
+                                
+                                <input type="hidden" name="kdbgweb_form_submitted" value="Y">
+                                
                                 <table class="form-table">
                                     <tr>
                                         <td>
-                                            <label for="kdbgweb_username">BG Web Username</label>
+                                            <label for="kdbgweb_username"><?php esc_attr_e( 'BG Web Username', 'wp_admin_style' ); ?></label>
                                         </td>
                                         <td>
                                             <input type="text" name="kdbgweb_username" id="kdbgweb_username" value="" class="regular-text" />
@@ -43,6 +48,8 @@
 
 					</div>
 					<!-- .postbox -->
+
+					<?php else: ?>
 
 					<div class="postbox">
 
@@ -62,10 +69,10 @@
                                         	<img width="120" src="<?php echo $plugin_url.'/images/wp-badge.png' ?>" alt="Image of WordPress badge" >
                                         </li>
                                         <li class="kdbgweb-badge-name">
-                                        	<a href="#">Badge Name</a>
+                                        	<a href="#"><?php esc_attr_e( 'Badge Name', 'wp_admin_style' ); ?></a>
                                         </li>
                                         <li class="kdbgweb-project-name">
-                                        	<a href="#">Project Name</a>
+                                        	<a href="#"><?php esc_attr_e( 'Project Name', 'wp_admin_style' ); ?></a>
                                         </li>
                                     </ul>
                                 </li>
@@ -77,6 +84,8 @@
 					</div>
 					<!-- .postbox -->
                     
+                    <?php endif; ?>
+                    
 				</div>
 				<!-- .meta-box-sortables .ui-sortable -->
 
@@ -87,7 +96,9 @@
 			<div id="postbox-container-1" class="postbox-container">
 
 				<div class="meta-box-sortables">
-
+					
+                    <?php if( isset( $kdbgweb_username ) || $kdbgweb_username != '' ): ?>
+                    
 					<div class="postbox">
 
 						<div class="handlediv" title="Click to toggle"><br></div>
@@ -110,7 +121,9 @@
 
 					</div>
 					<!-- .postbox -->
-
+					
+                    <?php endif; ?>
+                    
 				</div>
 				<!-- .meta-box-sortables -->
 

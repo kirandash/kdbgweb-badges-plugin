@@ -49,6 +49,18 @@ function kdbgweb_badges_options_page() {
     
 	global $plugin_url;
 	
+	if( isset( $_POST['kdbgweb_form_submitted'] ) ) {
+		
+		$hidden_field = esc_html( $_POST['kdbgweb_form_submitted'] );
+		
+		if( $hidden_field == 'Y' ) {
+			
+			$kdbgweb_username = esc_html( $_POST['kdbgweb_username'] );
+			
+		}
+		
+	}
+	
     require('inc/options-page-wrapper.php');
     
 }
