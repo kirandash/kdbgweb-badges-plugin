@@ -67,6 +67,8 @@ function kdbgweb_badges_options_page() {
 			
 			update_option( 'kdbgweb_badges', $options );
 			
+			//var_dump($kdbgweb_profile);
+			
 		}
 		
 	}

@@ -66,13 +66,13 @@
                                 <li>
                                 	<ul>
                                     	<li>
-                                        	<img width="120" src="<?php echo $plugin_url.'/images/wp-badge.png' ?>" alt="Image of WordPress badge" >
+                                        	<img width="120" src="<?php echo $kdbgweb_profile->{'badges'}[$i]->{'icon_url'}; ?>" alt="Image of WordPress badge" >
                                         </li>
                                         <li class="kdbgweb-badge-name">
-                                        	<a href="#"><?php esc_attr_e( 'Badge Name', 'wp_admin_style' ); ?></a>
+                                        	<a href="#"><?php echo $kdbgweb_profile->{'badges'}[$i]->{'name'}; ?></a>
                                         </li>
                                         <li class="kdbgweb-project-name">
-                                        	<a href="#"><?php esc_attr_e( 'Project Name', 'wp_admin_style' ); ?></a>
+                                        	<a href="#"><?php echo $kdbgweb_profile->{'badges'}[$i]->{'courses'}[0]->{'title'}; ?></a>
                                         </li>
                                     </ul>
                                 </li>
@@ -83,6 +83,34 @@
 
 					</div>
 					<!-- .postbox -->
+                    
+                    <div class="postbox">
+
+						<div class="handlediv" title="Click to toggle"><br></div>
+						<!-- Toggle -->
+
+						<h2 class="hndle"><span><?php esc_attr_e( 'Most recent badges', 'wp_admin_style' ); ?></span>
+						</h2>
+
+						<div class="inside">
+                        	
+                            <p>
+                            	<?php echo $kdbgweb_profile->{'name'}; ?>
+                            </p>
+                            <p>
+                            	<?php echo $kdbgweb_profile->{'profile_url'}; ?>
+                            </p>
+                            <p>
+                            	<?php echo $kdbgweb_profile->{'badges'}[1]->{'courses'}[1]->{'title'}; ?>
+                            </p>
+                            
+                            <pre><code><?php var_dump($kdbgweb_profile); ?></code></pre>
+                            
+                        </div>
+                        <!-- .inside -->
+                        
+                    </div>
+                    <!-- .postbox -->
                     
                     <?php endif; ?>
                     
