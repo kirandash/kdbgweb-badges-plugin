@@ -59,10 +59,13 @@ function kdbgweb_badges_options_page() {
 			
 			$kdbgweb_username = esc_html( $_POST['kdbgweb_username'] );
 			
+			$kdbgweb_profile = kdbgweb_badges_get_profile( $kdbgweb_username );
+			
 			$options['kdbgweb_username'] = $kdbgweb_username;
+			$options['kdbgweb_profile']  = $kdbgweb_profile;
 			$options['last_updated'] 	 = time();
 			
-			update_option( 'kdbgweb_username', $options );
+			update_option( 'kdbgweb_badges', $options );
 			
 		}
 		
@@ -73,11 +76,25 @@ function kdbgweb_badges_options_page() {
 	if( $options != '' ) {
 		
 		$kdbgweb_username = $options['kdbgweb_username'];
+		$kdbgweb_profile  = $options['kdbgweb_profile'];
 		
 	}
 	
     require('inc/options-page-wrapper.php');
     
+}
+
+function kdbgweb_badges_get_profile( $kdbgweb_username ) {
+	
+	$json_feed_url = 'http://teamtreehouse.com/'. $kdbgweb_username .'.json';
+	$args = array( 'timeout' => 120 );
+	
+	$json_feed = wp_remote_get( $json_feed_url, $args );
+	
+	$kdbgweb_profile = json_decode( $json_feed['body'] );
+	
+	return $kdbgweb_profile;
+	
 }
 
 function kdbgweb_badges_styles() {
