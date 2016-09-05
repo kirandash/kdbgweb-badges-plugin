@@ -15,6 +15,7 @@
  
  $plugin_url = WP_PLUGIN_URL . '/kdbgweb-badges';
  $options = array();
+ $display_json = false;
  
 /*
  * Add a link to our plugin in the admin menu
@@ -50,6 +51,7 @@ function kdbgweb_badges_options_page() {
     
 	global $plugin_url;
 	global $options;
+	global $display_json;
 	
 	if( isset( $_POST['kdbgweb_form_submitted'] ) ) {
 		

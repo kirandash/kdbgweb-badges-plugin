@@ -68,12 +68,24 @@
                                     	<li>
                                         	<img width="120" src="<?php echo $kdbgweb_profile->{'badges'}[$i]->{'icon_url'}; ?>" alt="Image of WordPress badge" >
                                         </li>
+                                        
+                                        <?php if( $kdbgweb_profile->{'badges'}[$i]->{'url'} !=  $kdbgweb_profile->{'profile_url'} ): ?>
                                         <li class="kdbgweb-badge-name">
-                                        	<a href="#"><?php echo $kdbgweb_profile->{'badges'}[$i]->{'name'}; ?></a>
+                                        	<a href="<?php echo $kdbgweb_profile->{'badges'}[$i]->{'url'}; ?>" target="_blank">
+												<?php echo $kdbgweb_profile->{'badges'}[$i]->{'name'}; ?></a>
                                         </li>
                                         <li class="kdbgweb-project-name">
-                                        	<a href="#"><?php echo $kdbgweb_profile->{'badges'}[$i]->{'courses'}[0]->{'title'}; ?></a>
+                                        	<a href="<?php echo $kdbgweb_profile->{'badges'}[$i]->{'courses'}[0]->{'url'}; ?>">
+												<?php echo $kdbgweb_profile->{'badges'}[$i]->{'courses'}[0]->{'title'}; ?></a>
                                         </li>
+                                        <?php else: ?>
+                                        
+                                        <li class="kdbgweb-badge-name">
+                                        	<?php echo $kdbgweb_profile->{'badges'}[$i]->{'name'}; ?>
+                                        </li>
+                                        
+										<?php endif; ?>
+                                        
                                     </ul>
                                 </li>
                                 <?php endfor; ?>
@@ -84,12 +96,13 @@
 					</div>
 					<!-- .postbox -->
                     
+                    <?php if( $display_json == true ): ?>
                     <div class="postbox">
 
 						<div class="handlediv" title="Click to toggle"><br></div>
 						<!-- Toggle -->
 
-						<h2 class="hndle"><span><?php esc_attr_e( 'Most recent badges', 'wp_admin_style' ); ?></span>
+						<h2 class="hndle"><span><?php esc_attr_e( 'JSON Feed', 'wp_admin_style' ); ?></span>
 						</h2>
 
 						<div class="inside">
@@ -111,6 +124,7 @@
                         
                     </div>
                     <!-- .postbox -->
+                    <?php endif; ?>
                     
                     <?php endif; ?>
                     
@@ -133,16 +147,16 @@
 						<!-- Toggle -->
 
 						<h2 class="hndle"><span><?php esc_attr_e(
-									'Kiran Dash\'s Profile', 'wp_admin_style'
+									$kdbgweb_profile->{'name'}.'\'s Profile', 'wp_admin_style'
 								); ?></span></h2>
 
 						<div class="inside">
 							<p>
-                            	<img class="kdbgweb-gravatar" width="100%" src="<?php echo $plugin_url.'/images/kirandash.jpg' ?>" alt="Profile picture of Kiran Dash" >
+                            	<img class="kdbgweb-gravatar" width="100%" src="<?php echo $kdbgweb_profile->{'gravatar_url'}; ?>" alt="Profile picture of Kiran Dash" >
                             </p>
                             <ul class="kdbgweb-badges-and-points">
-                            	<li><?php _e( 'Badges: <strong>200</strong>', 'wp_admin_style' ); ?></li>
-                                <li><?php _e( 'Points: <strong>10000</strong>', 'wp_admin_style' ); ?></li>
+                            	<li><?php _e( 'Badges: <strong>'. count( $kdbgweb_profile->{'badges'} ) .'</strong>', 'wp_admin_style' ); ?></li>
+                                <li><?php _e( 'Points: <strong>'. $kdbgweb_profile->{'points'}->{'total'} .'</strong>', 'wp_admin_style' ); ?></li>
                             </ul>
                             <form name="kdbgweb_username_form" method="post" action="">
                                 
