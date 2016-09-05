@@ -12,7 +12,7 @@
 	display: table
 }
 
-.postbox .wptreehouse-badges > li {
+.postbox .kdbgweb-badges > li {
 	float: left; 
 	margin: 5px; 
 	text-align: center; 
@@ -21,24 +21,24 @@
 	overflow: hidden;
 }           
 
-.postbox .wptreehouse-badges li li {
+.postbox .kdbgweb-badges li li {
 	margin: 2px 0; 
 	padding: 0;
 }
 
-.postbox .wptreehouse-badges img {
+.postbox .kdbgweb-badges img {
 	float: left;
 	width: 100%; 
 	margin-bottom: 5px;
 }           
 
-.postbox .wptreehouse-project-name a {
+.postbox .kdbgweb-project-name a {
 	font-size: .8em; 
 	text-decoration: none; 
 	line-height: .5em
 }
 
-.postbox .wptreehouse-badges-and-points li {
+.postbox .kdbgweb-badges-and-points li {
 	padding: 5px 10px; 
 	background: #474747; 
 	color: #ddd; 
@@ -47,11 +47,11 @@
 	float: left;
 }  
 
-.postbox .wptreehouse-badges-and-points li:first-child {
+.postbox .kdbgweb-badges-and-points li:first-child {
 	margin-right: 5px
 }   
 
-.postbox .wptreehouse-badges-and-points strong {
+.postbox .kdbgweb-badges-and-points strong {
 	color: #92ae57;
 }                   
 
@@ -61,26 +61,26 @@
  *
 */
 
-.wptreehouse-badges.frontend a,
-.widget-area .widget .wptreehouse-badges.frontend a {	
+.kdbgweb-badges.frontend a,
+.widget-area .widget .kdbgweb-badges.frontend a {	
 	color: #999;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	letter-spacing: .25px;
 	text-decoration: none;
 }
 
-.wptreehouse-badges.frontend a:hover,
-.widget-area .widget .wptreehouse-badges.frontend a:hover {	
+.kdbgweb-badges.frontend a:hover,
+.widget-area .widget .kdbgweb-badges.frontend a:hover {	
 	color: #ddd;	
 }
 
-.wptreehouse-badges,
-.widget-area .widget .wptreehouse-badges {
+.kdbgweb-badges,
+.widget-area .widget .kdbgweb-badges {
 	display: table;
 }
 
-.wptreehouse-badges li,
-.widget-area .wptreehouse-badges li {
+.kdbgweb-badges li,
+.widget-area .kdbgweb-badges li {
 	float: left;
 	width: 100px;
 	margin: 0 5px 5px;
@@ -89,13 +89,13 @@
 	list-style: none;
 }
 
-.wptreehouse-badges .wptreehouse-badge img {
+.kdbgweb-badges .kdbgweb-badge img {
 	width: 100%;
 	border: none;
 	box-shadow: 0 0 0 0;
 }
 
-.wptreehouse-badges .wptreehouse-badge-info {	
+.kdbgweb-badges .kdbgweb-badge-info {	
 	display: none;
 	background: #3d444b;
 	border-radius: 4px;	
@@ -110,13 +110,13 @@
 	-webkit-transition: bottom ease-out .5s; 
 }
 
-.wptreehouse-badges li:hover .wptreehouse-badge-info {
+.kdbgweb-badges li:hover .kdbgweb-badge-info {
 	bottom: 129px;
 	transition: bottom ease-out .5s;
 	-webkit-transition: bottom ease-out .5s; 
 }
 
-.wptreehouse-badges .wptreehouse-badge-info .wptreehouse-tooltip.bottom {
+.kdbgweb-badges .kdbgweb-badge-info .kdbgweb-tooltip.bottom {
 	background: url(images/tooltip-arrow.png) no-repeat 0 0;
 	display: block;
 	position: absolute;
@@ -127,34 +127,34 @@
 	z-index: 99;
 }
 
-.wptreehouse-badge-info p.wptreehouse-badge-name,
-.widget-area .widget .wptreehouse-badge-info p.wptreehouse-badge-name {
+.kdbgweb-badge-info p.kdbgweb-badge-name,
+.widget-area .widget .kdbgweb-badge-info p.kdbgweb-badge-name {
 	font-size: 14px;
 	line-height: 16px;
 	margin:  0 0 8px;	
 }
 
-.wptreehouse-badge-info .wptreehouse-badge-name a,
-.widget-area .widget .wptreehouse-badge-info .wptreehouse-badge-name a {
+.kdbgweb-badge-info .kdbgweb-badge-name a,
+.widget-area .widget .kdbgweb-badge-info .kdbgweb-badge-name a {
 	color: #fff; 
 	text-shadow: 0 0 1px #000;
 }
 
-.wptreehouse-badge-info .wptreehouse-badge-name a:hover,
-.widget-area .widget .wptreehouse-badge-info .wptreehouse-badge-name a:hover {
+.kdbgweb-badge-info .kdbgweb-badge-name a:hover,
+.widget-area .widget .kdbgweb-badge-info .kdbgweb-badge-name a:hover {
 	color: #fff
 }
 
-.wptreehouse-badge-info p.wptreehouse-badge-project,
-.widget-area .widget .wptreehouse-badge-info p.wptreehouse-badge-project {
+.kdbgweb-badge-info p.kdbgweb-badge-project,
+.widget-area .widget .kdbgweb-badge-info p.kdbgweb-badge-project {
 	color: #edeff0;
 	font-size: 11px;
 	line-height: 14px;
 	margin: 0;	
 }
 
-.wptreehouse-badge-info .wptreehouse-logo,
-.widget-area .widget .wptreehouse-badge-info .wptreehouse-logo {
+.kdbgweb-badge-info .kdbgweb-logo,
+.widget-area .widget .kdbgweb-badge-info .kdbgweb-logo {
 	display: block;
 	width: 80px;
 	padding: 20px 0 0;
@@ -165,6 +165,6 @@
 	display: block;
 } 
 
-img.wptreehouse-affiliate {
+img.kdbgweb-affiliate {
 	width: 100%;
 }

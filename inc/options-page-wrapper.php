@@ -62,7 +62,11 @@
 						<div class="inside">
                             <p><?php esc_attr_e( 'Below are your 20 most recent badges', 'wp_admin_style' ); ?></p>
                             <ul class="kdbgweb-badges">
-                            	<?php for( $i=0; $i<20; $i++ ): ?>
+                            	<?php 
+							 	 $total_badges = count( $kdbgweb_profile->{'badges'} );
+		
+								 for( $i = $total_badges - 1; $i >= $total_badges - 20; $i-- ):
+								 ?>
                                 <li>
                                 	<ul>
                                     	<li>
