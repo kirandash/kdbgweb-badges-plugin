@@ -101,10 +101,19 @@ function kdbgweb_badges_get_profile( $kdbgweb_username ) {
 	
 }
 
-function kdbgweb_badges_styles() {
+function kdbgweb_badges_backend_styles() {
 	
-	wp_enqueue_style('kdbgweb_badges_styles', plugins_url('kdbgweb-badges/kdbgweb-badges.css') );
+	wp_enqueue_style('kdbgweb_badges_backend_css', plugins_url('kdbgweb-badges/kdbgweb-badges.css') );
 	
 }
 
-add_action('admin_head','kdbgweb_badges_styles');
+add_action('admin_head','kdbgweb_badges_backend_styles');
+
+function kdbgweb_badges_frontend_scripts_and_styles() {
+	
+	wp_enqueue_style('kdbgweb_badges_frontend_css', plugins_url('kdbgweb-badges/kdbgweb-badges.css') );
+	wp_enqueue_script('kdbgweb_badges_frontend_js', plugins_url('kdbgweb-badges/kdbgweb-badges.js'), array('jquery'), '', true );
+	
+}
+
+add_action('wp_enqueue_scripts','kdbgweb_badges_frontend_scripts_and_styles');
