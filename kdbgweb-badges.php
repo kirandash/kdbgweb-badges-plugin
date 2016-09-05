@@ -88,6 +88,49 @@ function kdbgweb_badges_options_page() {
     
 }
 
+class Kdbgweb_Badges_Widget extends WP_Widget {
+
+	function kdbgweb_badges_widget() {
+		// Instantiate the parent object
+		parent::__construct( false, 'Official BGWebagency Badges Widget' );
+	}
+
+	function widget( $args, $instance ) {
+		// Widget output
+		
+		extract( $args );
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		
+		$options = get_option('kdbgweb_badges');
+		$kdbgweb_profile  = $options['kdbgweb_profile'];	
+		
+		require( 'inc/front-end.php' );	
+	}
+
+	function update( $new_instance, $old_instance ) {
+		// Save widget options
+		
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+		
+		return $instance;
+	}
+
+	function form( $instance ) {
+		// Output admin widget options form
+		
+		$title = esc_attr( $instance['title'] );
+		
+		require( 'inc/widget-fields.php' );
+	}
+}
+
+function kdbgweb_badges_register_widgets() {
+	register_widget( 'Kdbgweb_Badges_Widget' );
+}
+
+add_action( 'widgets_init', 'kdbgweb_badges_register_widgets' );
+
 function kdbgweb_badges_get_profile( $kdbgweb_username ) {
 	
 	$json_feed_url = 'http://teamtreehouse.com/'. $kdbgweb_username .'.json';
